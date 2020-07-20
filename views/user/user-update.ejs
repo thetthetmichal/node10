@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../partial/head %> 
+
+<body data-background-color="dark">
+	<div class="wrapper">
+		<% include ../partial/header %>
+
+		<% include ../partial/sidebar %>
+
+		<div class="main-panel">
+			<div class="content">
+				<div class="page-inner">
+					<!-- <div class="page-header">
+						<h4 class="page-title">Forms</h4>
+						<ul class="breadcrumbs">
+							<li class="nav-home">
+								<a href="#">
+									<i class="flaticon-home"></i>
+								</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">Forms</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">Basic Form</a>
+							</li>
+						</ul>
+					</div> -->
+					<div class="row">
+						 <div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Form Elements</div>
+								</div> 
+								<div class="card-body">
+									<div class="row">
+                                                                                <form action="/users/userupdate" method="post">
+
+                                                                                        <input type="hidden" name="id" value="<%= user._id %>">
+										<div class="col-md-6 col-lg-10">
+											
+											<div class="form-group">
+												<label for="email2">User Name</label>
+												<input type="text" class="form-control" id="email2" value="<%= user.name%>" name="uname">
+				
+											</div>
+											<div class="form-group">
+												<label for="email">Email Address</label>
+												<input type="email" class="form-control" id="email" value="<%= user.email%>" name="uemail">
+												
+											</div>
+											<div class="form-group">
+												<label for="password">Password</label>
+												<input type="password" class="form-control" id="password" value="<%= user.password%>" name="pwd">
+											</div>
+								 <div class="card-action"> 
+									<button class="btn btn-success">Update</button><p></p>
+									<button class="btn btn-danger">Cancel</button>
+								
+								 </div> 
+							</form>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+			
+     <% include ../partial/footer %>		
+		</div>	
+		<!-- <div class="custom-template">
+			<div class="title">Settings</div>
+			<div class="custom-content">
+				<div class="switcher">
+					<div class="switch-block">
+						<h4>Logo Header</h4>
+						<div class="btnSwitch">
+							<button type="button" class="changeLogoHeaderColor" data-color="dark"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="blue"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="green"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="red"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="white"></button>
+							<br/>
+							<button type="button" class="selected changeLogoHeaderColor" data-color="dark2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
+						</div>
+					</div>
+					<div class="switch-block">
+						<h4>Navbar Header</h4>
+						<div class="btnSwitch">
+							<button type="button" class="selected changeTopBarColor" data-color="dark"></button>
+							<button type="button" class="changeTopBarColor" data-color="blue"></button>
+							<button type="button" class="changeTopBarColor" data-color="purple"></button>
+							<button type="button" class="changeTopBarColor" data-color="light-blue"></button>
+							<button type="button" class="changeTopBarColor" data-color="green"></button>
+							<button type="button" class="changeTopBarColor" data-color="orange"></button>
+							<button type="button" class="changeTopBarColor" data-color="red"></button>
+							<button type="button" class="changeTopBarColor" data-color="white"></button>
+							<br/>
+							<button type="button" class="changeTopBarColor" data-color="dark2"></button>
+							<button type="button" class="changeTopBarColor" data-color="blue2"></button>
+							<button type="button" class="changeTopBarColor" data-color="purple2"></button>
+							<button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
+							<button type="button" class="changeTopBarColor" data-color="green2"></button>
+							<button type="button" class="changeTopBarColor" data-color="orange2"></button>
+							<button type="button" class="changeTopBarColor" data-color="red2"></button>
+						</div>
+					</div>
+					<div class="switch-block">
+						<h4>Sidebar</h4>
+						<div class="btnSwitch">
+							<button type="button" class="changeSideBarColor" data-color="white"></button>
+							<button type="button" class="changeSideBarColor" data-color="dark"></button>
+							<button type="button" class="selected changeSideBarColor" data-color="dark2"></button>
+						</div>
+					</div>
+					<div class="switch-block">
+						<h4>Background</h4>
+						<div class="btnSwitch">
+							<button type="button" class="changeBackgroundColor" data-color="bg2"></button>
+							<button type="button" class="changeBackgroundColor selected" data-color="bg1"></button>
+							<button type="button" class="changeBackgroundColor" data-color="bg3"></button>
+							<button type="button" class="selected changeBackgroundColor" data-color="dark"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="custom-toggle">
+				<i class="flaticon-settings"></i>
+			</div>
+		</div> -->
+		<!-- End Custom template -->
+	</div>
+	<!--   Core JS Files   -->
+	<% include ../partial/script %>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Update</title>
+</head>
+<body>
+    <h1>User Update</h1>
+    <form action="/users/userupdate" method="post">
+    <input type="hidden" name="id" value="<%= user._id %>">
+    <label for="name">User Name</label>
+        <input type="text" name="uname" id="name" value="<%= user.name%>">
+<p></p>
+        <label for="email">User Email</label>
+        <input type="email" name="uemail" id="email"  value="<%= user.email%>">
+<p></p>
+        <label for="pwd">Password</label>
+        <input type="password" name="pwd" id="pwd"  value="<%= user.password%>">
+        <p></p>
+        <input type="submit" value="Update"></form>
+</body>
+</html> -->
