@@ -9,6 +9,11 @@ var usersRouter = require('./routes/users');
 var postsRouter=require('./routes/posts');
 var app = express();
 var session=require('express-session');
+var apiUsersRouter=require('./api/routes/users');
+var apiAdminsRouter=require('./api/routes/admins');
+
+var apiPostsRouter=require('./api/routes/posts')
+
 const { REPL_MODE_STRICT } = require('repl');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,11 +32,14 @@ app.use(
   })
 );
 
-mongoose.connect("mongodb://127.0.0.1/node10db");
+mongoose.connect("mongodb+srv://thetthetmichal:michal123@cluster0.eqxuf.mongodb.net/node10db?retryWrites=true&w=majority");
 var db=mongoose.connection;
 db.on("error",console.error.bind(console,"mongoDB connection error:"));
-
+app.use('/api/users',apiUsersRouter);
+app.use('/api/',apiAdminsRouter);
 app.use('/', indexRouter);
+app.use('/api/posts',apiPostsRouter);
+
 app.use(function(req,res,next){
 if(req.session.user){
   next();

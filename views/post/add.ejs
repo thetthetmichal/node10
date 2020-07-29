@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Post Add </h1>
-    <form action="/posts/add" method="post">
+    <form action="/posts/add" method="post" enctype="multipart/form-data">
         <label for="title" >New Title</label>
     <input type="title" name='title' id='title' ><p></p>
 
@@ -20,7 +20,12 @@
     <% for(var i=0;i<users.length;i++){%>
     <option value="<%= users[i]._id%>"><%= users[i].name%></option>
     <%}%>
+    <p></p>
+        <label for="img">Image</label>
+        <input type="file" name="photo" id="img">
+    
 </select>
+<p></p>
     <input type="submit" value="Add">
 </form>
 </body>

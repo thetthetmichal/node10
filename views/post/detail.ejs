@@ -15,7 +15,10 @@
     <p></p>
     Author Email :<%= post.author.email%>
     <p></p>
-    <a href="/posts/update/<%= post._id%>"><button>Update</button></a>
+    Profile: <img src="<%= post.imgUrl %>" alt="" width="100" height="70">
+    <a href="/posts/update/<%= post._id%>">
+        <p></p>
+        <button>Update</button></a>
     <button onclick="del();">Delete</button> 
 </body>
 <script>
