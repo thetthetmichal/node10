@@ -12,9 +12,7 @@ router.get('/add',function(req,res){
         res.render('post/add',{users:rtn});
     })
 })
-router.get('/add',function(req,res){
-    res.render('post/add');
-});
+
 
 router.post("/add",upload.single('photo'),function(req,res){
     var post=new Post();
@@ -58,8 +56,8 @@ router.post('/update',function(req,res){
 var update={
     title:req.body.title,
     content:req.body.content,
-    author:req.body.author
-}
+    author:req.body.author,
+};
     Post.findByIdAndUpdate(req.body.id,{$set:update},function(err,rtn){
         if(err)throw err;
         console.log(rtn);
